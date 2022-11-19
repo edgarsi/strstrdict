@@ -1,0 +1,12 @@
+include strstrdict/cramped_string.h
+include strstrdict/sizepacks.h
+include strstrdict/parallel_hashmap/LICENSE
+include strstrdict/parallel_hashmap/SOURCE
+include strstrdict/parallel_hashmap/meminfo.h
+include strstrdict/parallel_hashmap/phmap.h
+include strstrdict/parallel_hashmap/phmap_base.h
+include strstrdict/parallel_hashmap/phmap_bits.h
+include strstrdict/parallel_hashmap/phmap_config.h
+include strstrdict/parallel_hashmap/phmap_dump.h
+include strstrdict/parallel_hashmap/phmap_fwd_decl.h
+include strstrdict/parallel_hashmap/phmap_utils.h
