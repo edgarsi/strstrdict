@@ -31,8 +31,8 @@ Drop-in replacement for `dict` with the following limitations:
 To KISS, this project only supports a string to string dictionary.
 
 More:
-* [Implementation details]
-* [Contributing]
+* [Implementation details](docs/memory.rst)
+* [Contributing](docs/contrib/index.rst)
 
 
 ## 🐍 Installation
@@ -86,12 +86,6 @@ at short strings.
 
 ## 🙏 Thanks & Credits
 
-[parallel-hashmap] for their amazing header-only library!
+[parallel-hashmap](https://github.com/greg7mdp/parallel-hashmap) for their amazing header-only library!
 
-[pysimdjson] for a reference how to write a cython lib!
-
-
-[Contributing]: (docs/contrib/index.rst)
-[Implementation details]: (docs/memory.rst)
-[pysimdjson]: (https://github.com/TkTech/pysimdjson)
-[parallel-hashmap]: (https://github.com/greg7mdp/parallel-hashmap)
+[pysimdjson](https://github.com/TkTech/pysimdjson) for a reference how to write a cython lib!
