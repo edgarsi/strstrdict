@@ -20,7 +20,7 @@ from strstrdict import StrStrDict
 
 dictionary_kinds = {
     'dict': dict,
-    # 'sqlitedict[^wrapper]': SqliteDict_Wrapper,
+    'sqlitedict[^wrapper]': SqliteDict_Wrapper,
     'strstrdict': StrStrDict,
 }
 
@@ -38,7 +38,7 @@ class BencherOptions:
 
 
 def benchmark_kinds():
-    for (str_length_min, str_length_max) in [(10,10),(5,10), (20,30), (100,200)]:
+    for (str_length_min, str_length_max) in [(5,10), (20,30), (100,200)]:
         yield BencherOptions(
             str_length_min=str_length_min,
             str_length_max=str_length_max)
