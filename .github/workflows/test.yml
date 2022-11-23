@@ -42,6 +42,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: [3.6, 3.7, 3.8, 3.9, "3.10", "3.11"]
+        exclude:
+          # Github actions broken for this. Tries to compile on macosx-10.9
+          # somehow, which does not have sufficient C++17 support.
+        - os: macos-latest
+          version: "3.11"
 
     steps:
       # Python needs to be setup before checkout to prevent files from being
