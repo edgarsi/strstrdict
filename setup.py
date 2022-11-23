@@ -17,10 +17,7 @@ with open(os.path.join(root, 'README.md'), 'rb') as readme:
 
 system = platform.system()
 
-extra_compile_args = []
-
-if system == 'Darwin':
-    extra_compile_args.append('-std=c++11')
+extra_compile_args = ['-std=c++17']
 
 if os.getenv('BUILD_WITH_CYTHON') and not CYTHON_AVAILABLE:
     print(
