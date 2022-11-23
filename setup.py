@@ -2,6 +2,7 @@ import os.path
 import platform
 
 from setuptools import setup, find_packages, Extension
+from setuptools.command.build_ext import build_ext
 
 try:
     from Cython.Build import cythonize
@@ -11,13 +12,22 @@ else:
     CYTHON_AVAILABLE = True
 
 
+class BuildExtWithCompilerArgs(build_ext):
+    def build_extensions(self):
+        for ext in self.extensions:
+            if self.compiler.compiler_type == 'msvc':
+                ext.extra_compile_args = ['/std:c++17']
+            else:
+                ext.extra_compile_args = ['-std=c++17']
+        build_ext.build_extensions(self)
+
+
 root = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(root, 'README.md'), 'rb') as readme:
     long_description = readme.read().decode('utf-8')
 
 system = platform.system()
 
-extra_compile_args = ['-std=c++17']
 
 if os.getenv('BUILD_WITH_CYTHON') and not CYTHON_AVAILABLE:
     print(
@@ -50,7 +60,6 @@ if os.getenv('BUILD_WITH_CYTHON') and CYTHON_AVAILABLE:
                 'strstrdict/cstrstrdict.pyx'
             ],
             define_macros=macros,
-            extra_compile_args=extra_compile_args
         )
     ], compiler_directives=compiler_directives, force=force)
 else:
@@ -60,7 +69,6 @@ else:
             [
                 'strstrdict/cstrstrdict.cpp',
             ],
-            extra_compile_args=extra_compile_args,
             language='c++'
         )
     ]
@@ -106,6 +114,7 @@ setup(
             'gmpy2',
         ],
     },
+    cmdclass={ 'build_ext': BuildExtWithCompilerArgs},
     ext_modules=extensions,
     package_data={
         'strstrdict': [

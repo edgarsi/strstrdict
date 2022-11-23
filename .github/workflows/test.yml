@@ -46,7 +46,7 @@ jobs:
           # Github actions broken for this. Tries to compile on macosx-10.9
           # somehow, which does not have sufficient C++17 support.
         - os: macos-latest
-          version: "3.11"
+          python-version: "3.11"
 
     steps:
       # Python needs to be setup before checkout to prevent files from being

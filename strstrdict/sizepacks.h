@@ -3,25 +3,33 @@
 
 namespace sizepacks {
 
-struct pack64 {
+#ifdef __GNUC__
+#define PACK( __Declaration__ ) __Declaration__ __attribute__((__packed__))
+#endif
+
+#ifdef _MSC_VER
+#define PACK( __Declaration__ ) __pragma( pack(push, 1) ) __Declaration__ __pragma( pack(pop))
+#endif
+
+PACK(struct pack64 {
     char header = 0xd3u;
     size_t size;
-} __attribute__((packed));
+});
 
-struct pack32 {
+PACK(struct pack32 {
     char header = 0xd2u;
     uint32_t size;
-} __attribute__((packed));
+});
 
-struct pack16 {
+PACK(struct pack16 {
     char header = 0xd1u;
     uint16_t size;
-} __attribute__((packed));
+});
 
-struct pack8 {
+PACK(struct pack8 {
     char header = 0xd0u;
     uint8_t size;
-} __attribute__((packed));
+});
 
 
 // size, startptr -> endptr
