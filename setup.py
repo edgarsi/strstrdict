@@ -76,7 +76,7 @@ else:
 setup(
     name='strstrdict',
     packages=find_packages(),
-    version='0.0.1',
+    version='0.0.2',
     description='lower memory alternative to string-to-string dict',
     long_description=long_description,
     long_description_content_type='text/markdown',
