@@ -1,4 +1,4 @@
-<img src="docs/_static/logo.png" alt="logo" width="100" align="right"/>
+<img src="https://raw.githubusercontent.com/edgarsi/strstrdict/main/docs/_static/logo.png" alt="logo" width="100" align="right"/>
 
 ![PyPI - License](https://img.shields.io/pypi/l/strstrdict.svg?style=flat-square)
 ![Tests](https://github.com/edgarsi/strstrdict/workflows/Run%20tests/badge.svg)
@@ -10,7 +10,7 @@ Low memory overhead alternative to Python's `dict`, with string keys and values.
 
 Uses half of the memory of `dict` for strings of length 40, at the cost of being
 half as fast. More improvement at shorter strings, less at longer ones. See more
-at [benchmarks](#-benchmarks).
+at [benchmarks](#benchmarks).
 
 
 ## 📝 Documentation
@@ -31,8 +31,8 @@ Drop-in replacement for `dict` with the following limitations:
 To KISS, this project only supports a string to string dictionary.
 
 More:
-* [Implementation details](docs/memory.rst)
-* [Contributing](docs/contrib/index.rst)
+* [Implementation details](https://github.com/edgarsi/strstrdict/tree/main/docs/memory.rst)
+* [Contributing](https://github.com/edgarsi/strstrdict/tree/main/docs/contrib/index.rst)
 
 
 ## 🐍 Installation
@@ -42,7 +42,7 @@ pip install strstrdict
 ```
 
 
-## 📈 Benchmarks
+## 📈 Benchmarks<a id="benchmarks"></a>
 
 Filling a dictionary with 1m items, key and value strings
 **5-10 chars** long, from a
